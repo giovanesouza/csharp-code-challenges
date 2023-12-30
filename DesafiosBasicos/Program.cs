@@ -51,32 +51,62 @@ class Program
 
 
         // DESAFIO 3 - Desvendando o Controle de Fluxo
+        /*
+                Console.WriteLine("Limite Inferior:");
+                int limiteInferior = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Limite Inferior:");
-        int limiteInferior = int.Parse(Console.ReadLine());
+                Console.WriteLine("Limite Superior:");
+                int limiteSuperior = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Limite Superior:");
-        int limiteSuperior = int.Parse(Console.ReadLine());
+                int somaPares = 0;
 
-        int somaPares = 0;
+                for (int i = limiteInferior; i <= limiteSuperior; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        somaPares += i;
+                    }
+                }
 
-        for (int i = limiteInferior; i <= limiteSuperior; i++)
+
+                Console.WriteLine($"A soma dos numeros pares de {limiteInferior} a {limiteSuperior} e: {somaPares}");
+        */
+
+
+        // DESAFIO 4 - Utilizando Array e Listas
+
+        Console.WriteLine("Quantos jogos deseja adicionar:");
+        int quantidadeJogos = int.Parse(Console.ReadLine());
+
+        //Inicializa os arrays com base na quantidade informada pelo usuário:
+        string[] nomesJogos = new string[quantidadeJogos]; 
+
+        // Loop para adicionar jogos conforme a quantidade especificada:
+        for (int i = 0; i < quantidadeJogos; i++)
         {
-            if (i % 2 == 0)
-            {
-                somaPares += i;
-            }
+            AdicionarJogo(i, nomesJogos);
         }
 
-
-        Console.WriteLine($"A soma dos numeros pares de {limiteInferior} a {limiteSuperior} e: {somaPares}");
-
-
-
-
-
-
-
+        // Exibe o resumo da adição de jogos
+        ExibirResumoAdicaoJogos(quantidadeJogos, nomesJogos);
 
     }
+
+
+
+    // DESAFIO 4 - Continuação do código
+    static void AdicionarJogo(int indice, string[] nomes)
+    {
+        // Entrada do nome do jogo
+        nomes[indice] = Console.ReadLine();
+    }
+
+    static void ExibirResumoAdicaoJogos(int quantidadeJogos, string[] nomes)
+    {
+        string nomesConcatenados = string.Join(", ", nomes); // Separa os itens da lista por vírbula
+
+        Console.WriteLine($"Foi adicionado '{quantidadeJogos}' jogos: {nomesConcatenados} ao catalogo.");
+    }
+
+
 }
