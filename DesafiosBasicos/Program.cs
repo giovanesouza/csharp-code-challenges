@@ -25,28 +25,53 @@ class Program
 
 
         // DESAFIO 2 - Dominando os Operadores
+        /*
+                string titulo;
+                string descricao;
+                string dataVencimento;
 
-        string titulo;
-        string descricao;
-        string dataVencimento;
+                Console.WriteLine("Título:");
+                titulo = Console.ReadLine();
 
-        Console.WriteLine("Título:");
-        titulo = Console.ReadLine();
+                Console.WriteLine("Descrição:");
+                descricao = Console.ReadLine();
 
-        Console.WriteLine("Descrição:");
-        descricao = Console.ReadLine();
+                if (descricao.Length > 50)
+                {
+                    Console.WriteLine("Descricao ultrapassa limite de caracteres.");
+                }
+                else
+                {
+                    Console.WriteLine("Data de vencimento:");
+                    dataVencimento = Console.ReadLine();
 
-        if (descricao.Length > 50)
+                    Console.WriteLine($"{descricao} ate {dataVencimento}");
+                }
+        */
+
+
+        // DESAFIO 3 - Desvendando o Controle de Fluxo
+
+        Console.WriteLine("Limite Inferior:");
+        int limiteInferior = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Limite Superior:");
+        int limiteSuperior = int.Parse(Console.ReadLine());
+
+        int somaPares = 0;
+
+        for (int i = limiteInferior; i <= limiteSuperior; i++)
         {
-            Console.WriteLine("Descricao ultrapassa limite de caracteres.");
+            if (i % 2 == 0)
+            {
+                somaPares += i;
+            }
         }
-        else
-        {
-            Console.WriteLine("Data de vencimento:");
-            dataVencimento = Console.ReadLine();
-         
-            Console.WriteLine($"{descricao} ate {dataVencimento}");
-        }
+
+
+        Console.WriteLine($"A soma dos numeros pares de {limiteInferior} a {limiteSuperior} e: {somaPares}");
+
+
 
 
 
