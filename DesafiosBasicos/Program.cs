@@ -73,28 +73,52 @@ class Program
         */
 
 
-        // DESAFIO 4 - Utilizando Array e Listas
+        // DESAFIO 4 - Utilizando Array e Listas (Fica dentro do Main)
+        /*
+                Console.WriteLine("Quantos jogos deseja adicionar:");
+                int quantidadeJogos = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Quantos jogos deseja adicionar:");
-        int quantidadeJogos = int.Parse(Console.ReadLine());
+                //Inicializa os arrays com base na quantidade informada pelo usuário:
+                string[] nomesJogos = new string[quantidadeJogos]; 
 
-        //Inicializa os arrays com base na quantidade informada pelo usuário:
-        string[] nomesJogos = new string[quantidadeJogos]; 
+                // Loop para adicionar jogos conforme a quantidade especificada:
+                for (int i = 0; i < quantidadeJogos; i++)
+                {
+                    AdicionarJogo(i, nomesJogos);
+                }
 
-        // Loop para adicionar jogos conforme a quantidade especificada:
-        for (int i = 0; i < quantidadeJogos; i++)
-        {
-            AdicionarJogo(i, nomesJogos);
-        }
+                // Exibe o resumo da adição de jogos
+                ExibirResumoAdicaoJogos(quantidadeJogos, nomesJogos);
+        */
 
-        // Exibe o resumo da adição de jogos
-        ExibirResumoAdicaoJogos(quantidadeJogos, nomesJogos);
+
+
+        // DESAFIO 5 - Manipulando Funções
+        
+        Console.WriteLine("Nome:");
+        string nome = Console.ReadLine();
+        
+        Console.WriteLine("Km/dia");
+        double quilometrosPorDia = double.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Horas de eletrônico:");
+        int horasDeEletronicos = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Refeições com carne:");
+        int refeicoesComCarne = int.Parse(Console.ReadLine());
+
+        // Chama o método para calcular a pegada de carbono
+        double pegadaDeCarbono = CalcularPegadaDeCarbono(quilometrosPorDia, horasDeEletronicos, refeicoesComCarne);
+
+        // TODO: Exiba o resultado para o usuário:
+        Console.WriteLine($"{nome}, sua pegada de carbono e de {pegadaDeCarbono} toneladas de CO2 por ano.");
 
     }
 
 
 
-    // DESAFIO 4 - Continuação do código
+    // DESAFIO 4 - MÉTODOS Continuação do código (Fica fora do Main) 
+    /*
     static void AdicionarJogo(int indice, string[] nomes)
     {
         // Entrada do nome do jogo
@@ -107,6 +131,12 @@ class Program
 
         Console.WriteLine($"Foi adicionado '{quantidadeJogos}' jogos: {nomesConcatenados} ao catalogo.");
     }
+    */
 
 
+    // DESAFIO 5 - MÉTODO
+    static double CalcularPegadaDeCarbono(double quilometrosPorDia, int horasDeEletronicos, int refeicoesComCarne)
+    {
+        return (quilometrosPorDia * 365 * 0.2) + (horasDeEletronicos * 0.1) + (refeicoesComCarne * 0.5);
+    }
 }
